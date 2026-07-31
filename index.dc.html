@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<![CDATA[<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#f4f6f8;color:#0e1b2c;font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#1b6fa8;text-decoration:none}
+  a:hover{color:#0e4a75}
+  @keyframes pmeRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div style="min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:50;background:rgba(10,26,46,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.1)">
+    <div style="max-width:1180px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" style="display:flex;align-items:center;gap:12px;color:#fff">
+        <span style="width:34px;height:34px;border-radius:9px;background:linear-gradient(140deg,#3d9fd6,#0e4a75);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.02em;color:#fff">PME</span>
+        <span style="display:flex;flex-direction:column;line-height:1.15">
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.01em">Performance Management Excellence</span>
+          <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#7fb6da">Consulting &amp; Training · Ireland</span>
+        </span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:6px">
+        <a href="#services" style="color:#cfe0ee;font-size:14px;font-weight:500;padding:9px 14px;border-radius:8px" style-hover="background:rgba(255,255,255,0.09);color:#fff">Services</a>
+        <a href="#who" style="color:#cfe0ee;font-size:14px;font-weight:500;padding:9px 14px;border-radius:8px" style-hover="background:rgba(255,255,255,0.09);color:#fff">Who we are</a>
+        <a href="#contact" style="margin-left:8px;background:#3d9fd6;color:#06182b;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px" style-hover="background:#68bce9;color:#06182b">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" style="position:relative;background:#0a1a2e;color:#fff;overflow:hidden">
+    <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=2400&amp;q=80');background-size:cover;background-position:center;filter:grayscale(0.35)"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(8,22,40,0.96) 0%,rgba(12,38,66,0.9) 48%,rgba(10,26,46,0.72) 100%)"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(900px 420px at 78% 8%,rgba(61,159,214,0.28),transparent 65%)"></div>
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:112px 32px 120px;display:grid;grid-template-columns:1.15fr 0.85fr;gap:64px;align-items:center">
+      <div style="animation:pmeRise 0.7s ease both">
+        <div style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(127,182,218,0.4);border-radius:999px;padding:7px 16px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#9ecbe8;margin-bottom:28px">Registered provider · Enterprise Ireland</div>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-size:60px;line-height:1.04;font-weight:600;letter-spacing:-0.025em;margin:0 0 24px;text-wrap:balance">Sustained performance improvement, built to last.</h1>
+        <p style="font-size:19px;line-height:1.6;color:#c3d7e6;margin:0 0 36px;max-width:560px;text-wrap:pretty">Through Continuous Improvement, Change Management (Lean, Six Sigma, Process Excellence) and People &amp; Organisational Development, we help organisations drive systemic performance improvement — not fire fighting.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a href="#services" style="background:#3d9fd6;color:#06182b;font-weight:700;font-size:15px;padding:15px 28px;border-radius:10px" style-hover="background:#68bce9;color:#06182b">Explore our services</a>
+          <a href="#contact" style="border:1px solid rgba(255,255,255,0.28);color:#fff;font-weight:600;font-size:15px;padding:15px 28px;border-radius:10px" style-hover="background:rgba(255,255,255,0.09);color:#fff">Talk to us</a>
+        </div>
+      </div>
+      <figure style="margin:0;border-left:2px solid rgba(127,182,218,0.45);padding:6px 0 6px 28px">
+        <blockquote style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:22px;line-height:1.45;font-weight:400;color:#e8f2f9;text-wrap:pretty">“It is an immutable law in business that words are words, explanations are explanations, promises are promises — but only performance is reality.”</blockquote>
+        <figcaption style="margin-top:16px;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:#7fb6da">Harold Geneen</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section style="background:#fff;border-bottom:1px solid #e3e9ee">
+    <div style="max-width:1180px;margin:0 auto;padding:56px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:600;color:#123456;letter-spacing:-0.02em">25+</div>
+        <div style="font-size:14px;color:#5c6b7a;margin-top:6px">Years senior Lean &amp; OD experience</div>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:600;color:#123456;letter-spacing:-0.02em">6</div>
+        <div style="font-size:14px;color:#5c6b7a;margin-top:6px">Core service areas</div>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:600;color:#123456;letter-spacing:-0.02em">2</div>
+        <div style="font-size:14px;color:#5c6b7a;margin-top:6px">Sectors served: service &amp; manufacturing</div>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:600;color:#123456;letter-spacing:-0.02em">1:1</div>
+        <div style="font-size:14px;color:#5c6b7a;margin-top:6px">Small client base, exceptional service</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#f4f6f8">
+    <div style="max-width:1180px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:0.9fr 1.1fr;gap:72px;align-items:start">
+      <div>
+        <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#1b6fa8;font-weight:700;margin-bottom:18px">Our approach</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:40px;line-height:1.1;font-weight:600;letter-spacing:-0.02em;margin:0;color:#0e1b2c;text-wrap:balance">The road to organisational excellence takes many forms.</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <p style="margin:0;font-size:18px;line-height:1.7;color:#3c4b5a;text-wrap:pretty">Unfortunately many organisations are still focused on fire fighting rather than root cause analysis. Performance Management Excellence is committed to working with organisations to achieve superior performance.</p>
+        <p style="margin:0;font-size:18px;line-height:1.7;color:#3c4b5a;text-wrap:pretty">The focus may be on the performance of an individual, a team, a function, or the whole organisation. Whatever your area of focus, we provide experience and practical expertise to support you to maximise performance.</p>
+        <div style="margin-top:8px;background:#fff;border:1px solid #e3e9ee;border-radius:14px;padding:24px 28px;display:flex;align-items:center;gap:24px">
+          <div style="flex:1">
+            <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#5c6b7a;font-weight:700;margin-bottom:8px">Registered provider with</div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;color:#123456">Enterprise Ireland</div>
+            <div style="font-size:14px;color:#5c6b7a;margin-top:6px">Delivery partner under the Lean Business Offer. <a href="#contact">Find out more</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="background:#0a1a2e;color:#fff">
+    <div style="max-width:1180px;margin:0 auto;padding:96px 32px">
+      <div style="display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:52px">
+        <div>
+          <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#7fb6da;font-weight:700;margin-bottom:16px">Services</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:42px;line-height:1.08;font-weight:600;letter-spacing:-0.02em;margin:0;max-width:620px;text-wrap:balance">Practical expertise, delivered where performance is won.</h2>
+        </div>
+        <p style="margin:0;max-width:320px;font-size:15px;line-height:1.65;color:#a9c4d8">Six connected disciplines. Engaged individually or as a full programme, tailored to your organisation.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+
+        <article style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px 28px;transition:transform 0.2s ease,background 0.2s ease" style-hover="background:rgba(61,159,214,0.14);transform:translateY(-4px)">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#3d9fd6;margin-bottom:20px">01</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin:0 0 14px;letter-spacing:-0.01em">Performance Improvement</h3>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#b9cfdf">Support of leadership teams to identify performance gaps and to create and implement performance improvement plans.</p>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#8fabc0">Poor performance is often symptomatic of hidden problems. We conduct root cause diagnostic analysis and verify that supporting structures and processes reinforce improvement strategies.</p>
+        </article>
+
+        <article style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px 28px;transition:transform 0.2s ease,background 0.2s ease" style-hover="background:rgba(61,159,214,0.14);transform:translateY(-4px)">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#3d9fd6;margin-bottom:20px">02</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin:0 0 14px;letter-spacing:-0.01em">Performance Goals &amp; Strategies</h3>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#b9cfdf">Assistance in developing and bringing clarity to performance goals and strategies at organisational and functional level.</p>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#8fabc0">We focus on how goals cascade and are adopted throughout the organisation, linking development plans and outcomes directly to strategy.</p>
+        </article>
+
+        <article style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px 28px;transition:transform 0.2s ease,background 0.2s ease" style-hover="background:rgba(61,159,214,0.14);transform:translateY(-4px)">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#3d9fd6;margin-bottom:20px">03</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin:0 0 14px;letter-spacing:-0.01em">Mentoring &amp; Facilitation</h3>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#b9cfdf">Provision of mentoring and facilitation support to work groups and management teams in the development of strategies and objectives.</p>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#8fabc0">Support across mentoring, facilitation, group dynamics, conflict resolution and team building.</p>
+        </article>
+
+        <article style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px 28px;transition:transform 0.2s ease,background 0.2s ease" style-hover="background:rgba(61,159,214,0.14);transform:translateY(-4px)">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#3d9fd6;margin-bottom:20px">04</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin:0 0 14px;letter-spacing:-0.01em">Self Sustaining Processes</h3>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#b9cfdf">Analysis of existing processes and development of new processes to sustain and drive ongoing performance improvement.</p>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#8fabc0">Short-term wins propel change forward, but improvements often fail to take root. The key to sustainment is robust supporting processes.</p>
+        </article>
+
+        <article style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px 28px;transition:transform 0.2s ease,background 0.2s ease" style-hover="background:rgba(61,159,214,0.14);transform:translateY(-4px)">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#3d9fd6;margin-bottom:20px">05</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin:0 0 14px;letter-spacing:-0.01em">Lean Implementation &amp; Sustainment</h3>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.65;color:#b9cfdf">Provision of expertise in Lean implementation based on practical hands-on experience.</p>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:#8fabc0">Results orientated and grounded in solid theoretical knowledge, with a flexible approach based on the unique needs of each organisation.</p>
+        </article>
+
+        <article style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px 28px;transition:transform 0.2s ease,background 0.2s ease" style-hover="background:rgba(61,159,214,0.14);transform:translateY(-4px)">
+          <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#3d9fd6;margin-bottom:20px">06</div>
+          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin:0 0 14px;letter-spacing:-0.01em">People Development &amp; Training</h3>
+          <p style="margin:0 0 16px;font-size:15px;line-height:1.65;color:#b9cfdf">Training and development support clearly aligned to business goals, customised to individual organisational requirements.</p>
+          <ul style="margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px">
+            <li style="font-size:13px;color:#cfe4f1;background:rgba(61,159,214,0.16);border:1px solid rgba(61,159,214,0.3);border-radius:999px;padding:5px 12px">Performance Management</li>
+            <li style="font-size:13px;color:#cfe4f1;background:rgba(61,159,214,0.16);border:1px solid rgba(61,159,214,0.3);border-radius:999px;padding:5px 12px">Leadership &amp; Management</li>
+            <li style="font-size:13px;color:#cfe4f1;background:rgba(61,159,214,0.16);border:1px solid rgba(61,159,214,0.3);border-radius:999px;padding:5px 12px">Personal Management</li>
+            <li style="font-size:13px;color:#cfe4f1;background:rgba(61,159,214,0.16);border:1px solid rgba(61,159,214,0.3);border-radius:999px;padding:5px 12px">Lean Implementation</li>
+          </ul>
+        </article>
+
+      </div>
+      <p style="margin:44px 0 0;font-size:16px;line-height:1.7;color:#a9c4d8;max-width:760px;text-wrap:pretty">We believe training should be grounded in organisational needs. To be effective it must result in behavioural change within the workplace.</p>
+    </div>
+  </section>
+
+  <section id="who" style="background:#fff">
+    <div style="max-width:1180px;margin:0 auto;padding:96px 32px">
+      <div style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:72px;align-items:start;margin-bottom:64px">
+        <div>
+          <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#1b6fa8;font-weight:700;margin-bottom:18px">Who we are</div>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:40px;line-height:1.1;font-weight:600;letter-spacing:-0.02em;margin:0;color:#0e1b2c;text-wrap:balance">A small, flexible consultancy and training organisation.</h2>
+        </div>
+        <p style="margin:0;font-size:18px;line-height:1.7;color:#3c4b5a;text-wrap:pretty">PME Ltd. tailors its approach and support to the specific needs of client organisations working across both the service and manufacturing sectors. At any one time we focus on a small client base in order to provide exceptional customer service.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
+        <article style="border:1px solid #e3e9ee;border-radius:18px;overflow:hidden;background:#fbfcfd;padding:28px;display:flex;flex-direction:column;gap:22px">
+          <div style="width:190px;aspect-ratio:1/1;overflow:hidden;background:#dde5ec;border-radius:14px;flex:none">
+            <img src="uploads/1517222779509.jpg" alt="Martin Sheehan" style="width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:grayscale(1)" />
+          </div>
+          <div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin:0 0 6px;color:#0e1b2c">Martin Sheehan</h3>
+            <div style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#1b6fa8;font-weight:700;margin-bottom:16px">Founder · Lean Black Belt</div>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3c4b5a;text-wrap:pretty">Martin has over 25 years’ experience across a number of business sectors, holding senior positions in Lean and Process Excellence, Learning and Development, Organisational Development, Change Management, Supply Chain Management and Operations. He is passionate about people development, with a particular focus on Lean Systems, Leadership/Management Development and Operational Excellence. A certified Master Trainer and Lean Black Belt, he also holds an MSc in People and Organisational Development.</p>
+          </div>
+        </article>
+
+        <article style="border:1px solid #e3e9ee;border-radius:18px;overflow:hidden;background:#fbfcfd;padding:28px;display:flex;flex-direction:column;gap:22px">
+          <div style="width:190px;aspect-ratio:1/1;overflow:hidden;background:#dde5ec;border-radius:14px;flex:none">
+            <img src="uploads/1583418847243.jpg" alt="Paul Nevin" style="width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:grayscale(1)" />
+          </div>
+          <div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin:0 0 6px;color:#0e1b2c">Paul Nevin</h3>
+            <div style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#1b6fa8;font-weight:700;margin-bottom:16px">Business Consultant</div>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:#3c4b5a;text-wrap:pretty">Paul is a Business Consultant with over 20 years’ experience across a range of industries, including ICT, B2B Services, Outsource Manufacturing and Turnkey Fulfilment. He has worked with multinational corporations and indigenous companies across Irish, UK and emerging European markets. Paul has successfully supported a number of start-ups with product development. A graduate of DCU Dublin Business School, he has 15 years’ Sales and General Management experience.</p>
+          </div>
+        </article>
+      </div>
+
+      <p style="margin:40px 0 0;font-size:17px;color:#5c6b7a">We also work with a number of experienced affiliate associates as required.</p>
+    </div>
+  </section>
+
+  <section id="contact" style="background:linear-gradient(165deg,#123456 0%,#0a1a2e 100%);color:#fff">
+    <div style="max-width:1180px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:72px;align-items:center">
+      <div>
+        <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#7fb6da;font-weight:700;margin-bottom:18px">Contact</div>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:40px;line-height:1.1;font-weight:600;letter-spacing:-0.02em;margin:0 0 22px;text-wrap:balance">Let’s talk about where performance is being lost.</h2>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#b9cfdf;max-width:520px;text-wrap:pretty">Tell us a little about your organisation and the challenge you’re facing. We’ll come back to you to arrange an initial conversation.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;border-left:1px solid rgba(255,255,255,0.16);padding-left:36px">
+        <div>
+          <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#7fb6da;font-weight:700;margin-bottom:6px">Email</div>
+          <a href="mailto:info@pme.ie" style="font-size:19px;color:#fff" style-hover="color:#68bce9">info@pme.ie</a>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#7fb6da;font-weight:700;margin-bottom:6px">Phone</div>
+          <div style="font-size:19px;color:#fff">+353 (0)00 000 0000</div>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#7fb6da;font-weight:700;margin-bottom:6px">Based in</div>
+          <div style="font-size:19px;color:#fff">Ireland — working nationwide</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#06121f;color:#7d94a8">
+    <div style="max-width:1180px;margin:0 auto;padding:36px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:14px">
+      <div>Copyright © Martin Sheehan — Performance Management Excellence Ltd. All rights reserved.</div>
+      <div style="display:flex;gap:22px">
+        <a href="#services" style="color:#7d94a8" style-hover="color:#cfe0ee">Services</a>
+        <a href="#who" style="color:#7d94a8" style-hover="color:#cfe0ee">Who we are</a>
+        <a href="#contact" style="color:#7d94a8" style-hover="color:#cfe0ee">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#123456"/><text x="50" y="58" font-family="sans-serif" font-size="22" font-weight="700" fill="#3d9fd6" text-anchor="middle">PME</text></svg></template>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
