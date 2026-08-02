@@ -14,55 +14,69 @@
 <style>
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;background:#f4f6f8;color:#0e1b2c;font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body{margin:0;overflow-x:hidden;background:#f4f6f8;color:#0e1b2c;font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:#1b6fa8;text-decoration:none}
   a:hover{color:#0e4a75}
   @keyframes pmeRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @media (max-width:700px){#pmeBrandText{display:none !important}#pmeNav{display:none !important}}
+  @media (min-width:701px){#pmeBurger{display:none !important}#pmeMobileMenu{display:none !important}}
 </style>
 </helmet>
 
 <div style="min-height:100vh">
 
   <header style="position:sticky;top:0;z-index:50;background:rgba(10,26,46,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.1)">
-    <div style="max-width:1180px;margin:0 auto;padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <div style="max-width:1180px;margin:0 auto;padding:12px clamp(16px,4vw,32px);min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
       <a href="#top" style="display:flex;align-items:center;gap:12px;color:#fff">
         <span style="width:34px;height:34px;border-radius:9px;background:linear-gradient(140deg,#3d9fd6,#0e4a75);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.02em;color:#fff">PME</span>
-        <span style="display:flex;flex-direction:column;line-height:1.15">
+        <span id="pmeBrandText" style="display:flex;flex-direction:column;line-height:1.15">
           <span style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.01em">Performance Management Excellence</span>
           <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#7fb6da">Consulting &amp; Training · Ireland</span>
         </span>
       </a>
-      <nav style="display:flex;align-items:center;gap:6px">
+      <button id="pmeBurger" type="button" aria-label="Menu" onClick="{{ toggleMenu }}" style="display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 10px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);border-radius:10px;cursor:pointer">
+        <span style="display:block;height:2px;background:#e8f2f9;border-radius:2px"></span>
+        <span style="display:block;height:2px;background:#e8f2f9;border-radius:2px"></span>
+        <span style="display:block;height:2px;background:#e8f2f9;border-radius:2px"></span>
+      </button>
+      <nav id="pmeNav" style="display:flex;align-items:center;gap:6px">
         <a href="#services" style="color:#cfe0ee;font-size:14px;font-weight:500;padding:9px 14px;border-radius:8px" style-hover="background:rgba(255,255,255,0.09);color:#fff">Services</a>
         <a href="#who" style="color:#cfe0ee;font-size:14px;font-weight:500;padding:9px 14px;border-radius:8px" style-hover="background:rgba(255,255,255,0.09);color:#fff">Who we are</a>
-        <a href="#contact" style="margin-left:8px;background:#3d9fd6;color:#06182b;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px" style-hover="background:#68bce9;color:#06182b">Get in touch</a>
+        <a href="#contact" style="margin-left:8px;background:#3d9fd6;color:#ffffff;font-size:14px;font-weight:700;padding:10px 20px;border-radius:8px" style-hover="background:#68bce9;color:#ffffff">Get in touch</a>
       </nav>
     </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <nav id="pmeMobileMenu" style="display:flex;flex-direction:column;gap:4px;padding:8px 16px 20px;border-top:1px solid rgba(255,255,255,0.1)">
+        <a href="#services" onClick="{{ closeMenu }}" style="color:#cfe0ee;font-size:16px;font-weight:500;padding:14px 12px;border-radius:8px" style-hover="background:rgba(255,255,255,0.09);color:#fff">Services</a>
+        <a href="#who" onClick="{{ closeMenu }}" style="color:#cfe0ee;font-size:16px;font-weight:500;padding:14px 12px;border-radius:8px" style-hover="background:rgba(255,255,255,0.09);color:#fff">Who we are</a>
+        <a href="#contact" onClick="{{ closeMenu }}" style="margin-top:6px;text-align:center;background:#3d9fd6;color:#ffffff;font-size:16px;font-weight:700;padding:14px 20px;border-radius:8px" style-hover="background:#68bce9;color:#ffffff">Get in touch</a>
+      </nav>
+    </sc-if>
   </header>
 
   <section id="top" style="position:relative;background:#0a1a2e;color:#fff;overflow:hidden">
     <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=2400&amp;q=80');background-size:cover;background-position:center;filter:grayscale(0.35)"></div>
     <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(8,22,40,0.96) 0%,rgba(12,38,66,0.9) 48%,rgba(10,26,46,0.72) 100%)"></div>
     <div style="position:absolute;inset:0;background:radial-gradient(900px 420px at 78% 8%,rgba(61,159,214,0.28),transparent 65%)"></div>
-    <div style="position:relative;max-width:1180px;margin:0 auto;padding:112px 32px 120px;display:grid;grid-template-columns:1.15fr 0.85fr;gap:64px;align-items:center">
+    <div style="position:relative;max-width:1180px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,5vw,32px) clamp(72px,10vw,120px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(36px,5vw,64px);align-items:center">
       <div style="animation:pmeRise 0.7s ease both">
         <div style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(127,182,218,0.4);border-radius:999px;padding:7px 16px;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#9ecbe8;margin-bottom:28px">Registered provider · Enterprise Ireland</div>
-        <h1 style="font-family:'Space Grotesk',sans-serif;font-size:60px;line-height:1.04;font-weight:600;letter-spacing:-0.025em;margin:0 0 24px;text-wrap:balance">Sustained performance improvement, built to last.</h1>
-        <p style="font-size:19px;line-height:1.6;color:#c3d7e6;margin:0 0 36px;max-width:560px;text-wrap:pretty">Through Continuous Improvement, Change Management (Lean, Six Sigma, Process Excellence) and People &amp; Organisational Development, we help organisations drive systemic performance improvement — not fire fighting.</p>
+        <h1 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(34px,6vw,60px);line-height:1.05;font-weight:600;letter-spacing:-0.025em;margin:0 0 24px;text-wrap:balance">Sustained performance improvement, built to last.</h1>
+        <p style="font-size:clamp(16px,2vw,19px);line-height:1.6;color:#c3d7e6;margin:0 0 36px;max-width:560px;text-wrap:pretty">Through Continuous Improvement, Change Management (Lean, Six Sigma, Process Excellence) and People &amp; Organisational Development, <strong style="font-weight:700;color:#e8f2f9">Performance Management Excellence</strong> helps organisations drive systemic performance improvement — not fire fighting.</p>
         <div style="display:flex;gap:14px;flex-wrap:wrap">
-          <a href="#services" style="background:#3d9fd6;color:#06182b;font-weight:700;font-size:15px;padding:15px 28px;border-radius:10px" style-hover="background:#68bce9;color:#06182b">Explore our services</a>
+          <a href="#services" style="background:#3d9fd6;color:#ffffff;font-weight:700;font-size:15px;padding:15px 28px;border-radius:10px" style-hover="background:#68bce9;color:#ffffff">Explore our services</a>
           <a href="#contact" style="border:1px solid rgba(255,255,255,0.28);color:#fff;font-weight:600;font-size:15px;padding:15px 28px;border-radius:10px" style-hover="background:rgba(255,255,255,0.09);color:#fff">Talk to us</a>
         </div>
       </div>
       <figure style="margin:0;border-left:2px solid rgba(127,182,218,0.45);padding:6px 0 6px 28px">
-        <blockquote style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:22px;line-height:1.45;font-weight:400;color:#e8f2f9;text-wrap:pretty">“It is an immutable law in business that words are words, explanations are explanations, promises are promises — but only performance is reality.”</blockquote>
+        <blockquote style="margin:0;font-family:'Space Grotesk',sans-serif;font-size:clamp(18px,2.3vw,22px);line-height:1.45;font-weight:400;color:#e8f2f9;text-wrap:pretty">“It is an immutable law in business that words are words, explanations are explanations, promises are promises — but only performance is reality.”</blockquote>
         <figcaption style="margin-top:16px;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:#7fb6da">Harold Geneen</figcaption>
       </figure>
     </div>
   </section>
 
   <section style="background:#fff;border-bottom:1px solid #e3e9ee">
-    <div style="max-width:1180px;margin:0 auto;padding:56px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,56px) clamp(20px,5vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,calc(50% - 16px)),1fr));gap:clamp(24px,4vw,32px)">
       <div>
         <div style="font-family:'Space Grotesk',sans-serif;font-size:38px;font-weight:600;color:#123456;letter-spacing:-0.02em">25+</div>
         <div style="font-size:14px;color:#5c6b7a;margin-top:6px">Years senior Lean &amp; OD experience</div>
@@ -83,14 +97,14 @@
   </section>
 
   <section style="background:#f4f6f8">
-    <div style="max-width:1180px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:0.9fr 1.1fr;gap:72px;align-items:start">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(64px,9vw,96px) clamp(20px,5vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,72px);align-items:start">
       <div>
         <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#1b6fa8;font-weight:700;margin-bottom:18px">Our approach</div>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:40px;line-height:1.1;font-weight:600;letter-spacing:-0.02em;margin:0;color:#0e1b2c;text-wrap:balance">The road to organisational excellence takes many forms.</h2>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4.4vw,40px);line-height:1.1;font-weight:600;letter-spacing:-0.02em;margin:0;color:#0e1b2c;text-wrap:balance">The road to organisational excellence takes many forms.</h2>
       </div>
       <div style="display:flex;flex-direction:column;gap:24px">
-        <p style="margin:0;font-size:18px;line-height:1.7;color:#3c4b5a;text-wrap:pretty">Unfortunately many organisations are still focused on fire fighting rather than root cause analysis. Performance Management Excellence is committed to working with organisations to achieve superior performance.</p>
-        <p style="margin:0;font-size:18px;line-height:1.7;color:#3c4b5a;text-wrap:pretty">The focus may be on the performance of an individual, a team, a function, or the whole organisation. Whatever your area of focus, we provide experience and practical expertise to support you to maximise performance.</p>
+        <p style="margin:0;font-size:clamp(16px,1.8vw,18px);line-height:1.7;color:#3c4b5a;text-wrap:pretty">Unfortunately many organisations are still focused on fire fighting rather than root cause analysis. Performance Management Excellence is committed to working with organisations to achieve superior performance.</p>
+        <p style="margin:0;font-size:clamp(16px,1.8vw,18px);line-height:1.7;color:#3c4b5a;text-wrap:pretty">The focus may be on the performance of an individual, a team, a function, or the whole organisation. Whatever your area of focus, we provide experience and practical expertise to support you to maximise performance.</p>
         <div style="margin-top:8px;background:#fff;border:1px solid #e3e9ee;border-radius:14px;padding:24px 28px;display:flex;align-items:center;gap:24px">
           <div style="flex:1">
             <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#5c6b7a;font-weight:700;margin-bottom:8px">Registered provider with</div>
@@ -104,14 +118,14 @@
 
   <section id="services" style="background:#0a1a2e;color:#fff">
     <div style="max-width:1180px;margin:0 auto;padding:96px 32px">
-      <div style="display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:52px">
+      <div style="display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,52px)">
         <div>
           <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#7fb6da;font-weight:700;margin-bottom:16px">Services</div>
-          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:42px;line-height:1.08;font-weight:600;letter-spacing:-0.02em;margin:0;max-width:620px;text-wrap:balance">Practical expertise, delivered where performance is won.</h2>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4.6vw,42px);line-height:1.08;font-weight:600;letter-spacing:-0.02em;margin:0;max-width:620px;text-wrap:balance">Practical expertise, delivered where performance is won.</h2>
         </div>
         <p style="margin:0;max-width:320px;font-size:15px;line-height:1.65;color:#a9c4d8">Six connected disciplines. Engaged individually or as a full programme, tailored to your organisation.</p>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px">
 
         <article style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:32px 28px;transition:transform 0.2s ease,background 0.2s ease" style-hover="background:rgba(61,159,214,0.14);transform:translateY(-4px)">
           <div style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:#3d9fd6;margin-bottom:20px">01</div>
@@ -167,15 +181,15 @@
 
   <section id="who" style="background:#fff">
     <div style="max-width:1180px;margin:0 auto;padding:96px 32px">
-      <div style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:72px;align-items:start;margin-bottom:64px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5vw,72px);align-items:start;margin-bottom:clamp(40px,6vw,64px)">
         <div>
           <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#1b6fa8;font-weight:700;margin-bottom:18px">Who we are</div>
-          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:40px;line-height:1.1;font-weight:600;letter-spacing:-0.02em;margin:0;color:#0e1b2c;text-wrap:balance">A small, flexible consultancy and training organisation.</h2>
+          <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4.4vw,40px);line-height:1.1;font-weight:600;letter-spacing:-0.02em;margin:0;color:#0e1b2c;text-wrap:balance">A small, flexible consultancy and training organisation.</h2>
         </div>
-        <p style="margin:0;font-size:18px;line-height:1.7;color:#3c4b5a;text-wrap:pretty">PME Ltd. tailors its approach and support to the specific needs of client organisations working across both the service and manufacturing sectors. At any one time we focus on a small client base in order to provide exceptional customer service.</p>
+        <p style="margin:0;font-size:clamp(16px,1.8vw,18px);line-height:1.7;color:#3c4b5a;text-wrap:pretty">PME Ltd. tailors its approach and support to the specific needs of client organisations working across both the service and manufacturing sectors. At any one time we focus on a small client base in order to provide exceptional customer service.</p>
       </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px">
         <article style="border:1px solid #e3e9ee;border-radius:18px;overflow:hidden;background:#fbfcfd;padding:28px;display:flex;flex-direction:column;gap:22px">
           <div style="width:190px;aspect-ratio:1/1;overflow:hidden;background:#dde5ec;border-radius:14px;flex:none">
             <img src="uploads/1517222779509.jpg" alt="Martin Sheehan" style="width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:grayscale(1)" />
@@ -204,31 +218,27 @@
   </section>
 
   <section id="contact" style="background:linear-gradient(165deg,#123456 0%,#0a1a2e 100%);color:#fff">
-    <div style="max-width:1180px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:1.1fr 0.9fr;gap:72px;align-items:center">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(64px,9vw,88px) clamp(20px,5vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(36px,5vw,72px);align-items:center">
       <div>
         <div style="font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#7fb6da;font-weight:700;margin-bottom:18px">Contact</div>
-        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:40px;line-height:1.1;font-weight:600;letter-spacing:-0.02em;margin:0 0 22px;text-wrap:balance">Let’s talk about where performance is being lost.</h2>
+        <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4.4vw,40px);line-height:1.1;font-weight:600;letter-spacing:-0.02em;margin:0 0 22px;text-wrap:balance">Let’s talk about where performance is being lost.</h2>
         <p style="margin:0;font-size:17px;line-height:1.7;color:#b9cfdf;max-width:520px;text-wrap:pretty">Tell us a little about your organisation and the challenge you’re facing. We’ll come back to you to arrange an initial conversation.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:20px;border-left:1px solid rgba(255,255,255,0.16);padding-left:36px">
         <div>
           <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#7fb6da;font-weight:700;margin-bottom:6px">Email</div>
-          <a href="mailto:info@pme.ie" style="font-size:19px;color:#fff" style-hover="color:#68bce9">info@pme.ie</a>
+          <a href="mailto:info@pme1.ie" style="font-size:19px;color:#fff" style-hover="color:#68bce9">info@pme1.ie</a>
         </div>
         <div>
           <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#7fb6da;font-weight:700;margin-bottom:6px">Phone</div>
-          <div style="font-size:19px;color:#fff">+353 (0)00 000 0000</div>
-        </div>
-        <div>
-          <div style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#7fb6da;font-weight:700;margin-bottom:6px">Based in</div>
-          <div style="font-size:19px;color:#fff">Ireland — working nationwide</div>
+          <div style="font-size:19px;color:#fff">+353 51 396 945</div>
         </div>
       </div>
     </div>
   </section>
 
   <footer style="background:#06121f;color:#7d94a8">
-    <div style="max-width:1180px;margin:0 auto;padding:36px 32px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:14px">
+    <div style="max-width:1180px;margin:0 auto;padding:clamp(28px,4vw,36px) clamp(20px,5vw,32px);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;font-size:14px">
       <div>Copyright © Martin Sheehan — Performance Management Excellence Ltd. All rights reserved.</div>
       <div style="display:flex;gap:22px">
         <a href="#services" style="color:#7d94a8" style-hover="color:#cfe0ee">Services</a>
@@ -244,7 +254,14 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  renderVals() { return {}; }
+  state = { menuOpen: false };
+  renderVals() {
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false })
+    };
+  }
 }
 </script>
 </body>
